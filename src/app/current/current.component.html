@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1>{{ myWeather.cityName }}, {{ myWeather.countryName }}</h1>
+  <h2>{{ myWeather.temp }}&deg;C</h2>
+  <div class="img">
+    <img src="http://openweathermap.org/img/w/{{ myWeather.icon }}.png" />
+  </div>
+  <h3>{{ myWeather.weatherKind }}</h3>
+  <h4>Max: {{ myWeather.tempMax }}&deg;C</h4>
+  <h4>Min: {{ myWeather.tempMin }}&deg;C</h4>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <input type="text" ngModel name="city" placeholder="Name of the city" />
+    <button>Go</button>
+  </form>
+</div>

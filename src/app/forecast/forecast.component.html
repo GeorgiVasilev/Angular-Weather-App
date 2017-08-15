@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <div class="row">
+    <form [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="forecastCity" />
+        <button>Go</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2" *ngFor="let day of cityForecast">
+      <h2>{{ day.date | date: 'MMMM d'}}</h2>
+      <div>
+        <img src="http://openweathermap.org/img/w/{{ day.icon }}.png" />
+      </div>
+      <div>
+        <h3>Max: {{day.tempMax}}&deg;C</h3>
+        <h3>Min: {{day.tempMin}}&deg;C</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
